@@ -1,6 +1,9 @@
+import newsBanner from '../assets/images/banner_news.jpg';
+
 const News = () => {
     return (
         <div className="page-fade-in pt-navbar">
+            <div className="page-banner" style={{ backgroundImage: `url(${newsBanner})` }}></div>
             <section className="section">
                 <div className="container">
                     <h1 className="section-title text-center">News & Reviews</h1>

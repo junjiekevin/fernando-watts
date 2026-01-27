@@ -1,6 +1,9 @@
+import scheduleBanner from '../assets/images/banner_schedule.jpg';
+
 const Schedule = () => {
     return (
         <div className="page-fade-in pt-navbar">
+            <div className="page-banner" style={{ backgroundImage: `url(${scheduleBanner})` }}></div>
             <section className="section">
                 <div className="container">
                     <h1 className="section-title text-center">Schedule</h1>

@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { recordings } from '../data/recordings';
 import { Play } from 'lucide-react';
 
+import recordingsBanner from '../assets/images/banner_recordings.jpg';
+
 const Recordings = () => {
     return (
         <div className="page-fade-in pt-navbar">
+            <div className="page-banner recordings-banner" style={{ backgroundImage: `url(${recordingsBanner})` }}></div>
             <section className="section">
                 <div className="container">
                     <h1 className="section-title text-center">Recordings</h1>
