@@ -24,7 +24,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-content">
                 <Link to="/" className="logo-text">
-                    FERNANDO <span className="accent">WATTS</span>
+                    Fernando <span className="accent">Watts</span>
                 </Link>
 
                 <div className={`nav-links ${isOpen ? 'open' : ''}`}>

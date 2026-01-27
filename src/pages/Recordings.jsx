@@ -2,16 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { recordings } from '../data/recordings';
 import { Play } from 'lucide-react';
+import SEO from '../components/SEO';
 
 import recordingsBanner from '../assets/images/banner_recordings.jpg';
 
 const Recordings = () => {
     return (
         <div className="page-fade-in pt-navbar">
+            <SEO
+                title="Recordings"
+                description="Explore the recordings of Fernando Watts, professional classical bass. Aria performances, recitals, and more."
+            />
             <div className="page-banner recordings-banner" style={{ backgroundImage: `url(${recordingsBanner})` }}></div>
             <section className="section">
                 <div className="container">
-                    <h1 className="section-title text-center">Recordings</h1>
+                    <h1 className="section-title text-center reveal">Recordings</h1>
                     <div className="recordings-grid mt-lg">
                         {recordings.map((rec) => (
                             <Link to={`/recordings/${rec.id}`} key={rec.id} className="recording-card">

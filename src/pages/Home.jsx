@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Home = () => {
     return (
         <div>
+            <SEO
+                title="Home"
+                description="The official website of Fernando Watts, a professional classical bass singer. Explore upcoming performances, recordings, and biography."
+            />
             <section className="hero">
                 <div className="hero-backdrop"></div>
                 <div className="container hero-content page-fade-in">
@@ -13,10 +18,14 @@ const Home = () => {
                         <Link to="/recordings" className="btn btn-outline">Listen & Watch</Link>
                     </div>
                 </div>
+                <div className="scroll-indicator">
+                    <span>SCROLL</span>
+                    <div className="scroll-line"></div>
+                </div>
             </section>
 
             <div className="page-fade-in">
-                <section className="highlights section">
+                <section className="highlights section reveal">
                     <div className="container">
                         <h2 className="section-title text-center">Recent Highlights</h2>
                         <div className="highlights-grid mt-lg">

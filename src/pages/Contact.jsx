@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Instagram, Facebook, Youtube, Send, ShieldCheck, RefreshCw } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact = () => {
     const [status, setStatus] = useState('');
@@ -41,6 +42,7 @@ const Contact = () => {
     if (status === 'SUCCESS') {
         return (
             <div className="contact-immersive-section">
+                <SEO title="Message Sent" description="Your inquiry has been successfully sent to Fernando Watts." />
                 <div className="contact-bg-wrapper"></div>
                 <div className="container" style={{ maxWidth: '600px' }}>
                     <div className="glass-card text-center page-fade-in">
@@ -62,6 +64,10 @@ const Contact = () => {
 
     return (
         <div className="contact-immersive-section">
+            <SEO
+                title="Contact"
+                description="Connect with Fernando Watts for bookings, recitals, and masterclasses. Secure inquiry portal."
+            />
             <div className="contact-bg-wrapper"></div>
 
             <div className="container">

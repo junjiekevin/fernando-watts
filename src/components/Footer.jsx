@@ -9,6 +9,7 @@ const Footer = () => {
                 <div className="footer-info">
                     <h3 className="footer-logo">FERNANDO <span className="accent">WATTS</span></h3>
                     <p>Classical Singer | Bass</p>
+                    <p className="footer-availability" style={{ fontSize: '0.8rem', opacity: 0.6, marginTop: '0.5rem', color: 'var(--color-accent)' }}>Currently accepting inquiries for Season 2026/27</p>
                 </div>
 
                 <div className="footer-socials">

@@ -9,6 +9,7 @@ import img1644 from '../assets/images/IMG_1644.jpg';
 import img1646 from '../assets/images/IMG_1646.jpg';
 import img1647 from '../assets/images/IMG_1647.jpg';
 import galleryBanner from '../assets/images/banner_gallery.jpg';
+import SEO from '../components/SEO';
 
 const Gallery = () => {
     const images = [
@@ -26,14 +27,18 @@ const Gallery = () => {
 
     return (
         <div className="page-fade-in pt-navbar">
+            <SEO
+                title="Gallery"
+                description="Official photography and production stills of Fernando Watts. Visual portfolio of professional opera and recital work."
+            />
             <div className="page-banner gallery-banner" style={{ backgroundImage: `url(${galleryBanner})` }}></div>
             <section className="section">
                 <div className="container">
-                    <h1 className="section-title text-center">Gallery</h1>
+                    <h1 className="section-title text-center reveal">Gallery</h1>
                     <div className="gallery-grid mt-lg">
                         {images.map((img, index) => (
                             <div key={index} className="gallery-card">
-                                <img src={img.src} alt={img.alt} className="gallery-image" />
+                                <img src={img.src} alt={img.alt} className="gallery-image" loading="lazy" />
                                 <div className="gallery-overlay">
                                     <span className="overlay-text">{img.alt}</span>
                                 </div>
