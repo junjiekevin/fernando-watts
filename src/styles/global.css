@@ -42,6 +42,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -664,16 +673,32 @@ a {
     }
 
     /* Reduce Hero CTA font sizes */
-    .hero-cta .btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.75rem;
-        letter-spacing: 1px;
-        white-space: nowrap;
-        /* Keep on one line */
+    .hero-title {
+        font-size: clamp(2.2rem, 10vw, 3.2rem);
+        /* Optimized for 375px screens */
+        word-wrap: break-word;
+        text-align: center;
     }
 
-    .hero-title {
-        font-size: clamp(2.2rem, 12vw, 4rem);
+    .hero-cta {
+        flex-direction: column;
+        gap: 1.2rem;
+        width: 100%;
+        max-width: 320px;
+        /* Baseline SE width minus safe padding */
+        margin: 2rem auto 0;
+        /* Center and provide vertical rhythm */
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        text-align: center;
+        font-size: 0.85rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem !important;
     }
 
     /* 2026-01-27: Recording Detail (Theater Mode) Mobile Polish
@@ -685,26 +710,7 @@ a {
      * Details:
      *   - These changes ensure that even the most complex recording titles fit elegantly without horizontal overflow or awkward stacking on narrow devices.
      */
-    /* Stack buttons on very small screens (iPhone SE) to prevent cropping */
     @media (max-width: 400px) {
-        .hero-cta {
-            flex-direction: column;
-            gap: 1rem;
-            width: 100%;
-        }
-
-        .hero-cta .btn {
-            width: 100%;
-            text-align: center;
-            font-size: 0.85rem;
-            padding: 0.8rem 1rem;
-        }
-
-        .section-title {
-            font-size: 1.8rem !important;
-            /* Force reduction for narrowest screens */
-        }
-
         .theater-title {
             font-size: 1.4rem !important;
         }
