@@ -146,7 +146,7 @@ const Contact = () => {
                                         </>
                                     ) : (
                                         <>
-                                            <Send size={20} /> Send Performance Inquiry
+                                            <Send size={20} /> Send Inquiry
                                         </>
                                     )}
                                 </button>

@@ -396,9 +396,9 @@ a {
 
 /* Section Shared */
 .section-title {
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 8vw, 3rem);
+    /* Responsive title scaling */
     color: var(--color-accent);
-    /* Titles now use the Regal Gold */
     position: relative;
     display: inline-block;
     margin-bottom: var(--spacing-md);
@@ -599,6 +599,8 @@ a {
 .theater-metadata {
     text-align: center;
     max-width: 900px !important;
+    margin-top: 6rem;
+    /* Added breathing room for desktop */
 }
 
 .theater-title {
@@ -639,7 +641,77 @@ a {
     }
 
     .theater-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+
+    .theater-composer {
+        font-size: 1.4rem;
+    }
+
+    .theater-metadata {
+        margin-top: var(--spacing-md) !important;
+    }
+
+    /* Prevent backdrop squishing */
+    .hero-backdrop,
+    .parallax-backdrop,
+    .contact-bg-wrapper {
+        background-attachment: scroll !important;
+        /* Fixed can be buggy on mobile */
+        background-size: cover !important;
+        background-position: center 10% !important;
+    }
+
+    /* Reduce Hero CTA font sizes */
+    .hero-cta .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        /* Keep on one line */
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 12vw, 4rem);
+    }
+
+    /* 2026-01-27: Recording Detail (Theater Mode) Mobile Polish
+     * Problem: In "Theater Mode" (Recording Detail), the typography for long titles (like Brahms) was too large for mobile, and the vertical spacing between the video and description was excessive.
+     * Action:
+     *   - Tiered Typography Scaling: Specifically reduced `.theater-title` and `.theater-composer` font sizes for mobile viewports, with further aggressive reduction for screens < 400px (iPhone SE).
+     *   - Layout Tightening: Reduced the top margin of the metadata section from `mt-xl` to `var(--spacing-md)` on mobile to create a more cohesive look.
+     *   - Legibility: Balanced line-height and letter-spacing for high-density mobile screens.
+     * Details:
+     *   - These changes ensure that even the most complex recording titles fit elegantly without horizontal overflow or awkward stacking on narrow devices.
+     */
+    /* Stack buttons on very small screens (iPhone SE) to prevent cropping */
+    @media (max-width: 400px) {
+        .hero-cta {
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .hero-cta .btn {
+            width: 100%;
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 0.8rem 1rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem !important;
+            /* Force reduction for narrowest screens */
+        }
+
+        .theater-title {
+            font-size: 1.4rem !important;
+        }
+
+        .theater-composer {
+            font-size: 1.2rem !important;
+        }
     }
 }
 
@@ -757,6 +829,8 @@ a {
 
     .page-banner {
         height: 200px;
+        background-attachment: scroll !important;
+        background-size: cover !important;
     }
 }
 

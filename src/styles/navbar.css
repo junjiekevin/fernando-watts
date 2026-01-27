@@ -74,7 +74,8 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--color-secondary);
+    color: var(--color-accent);
+    /* Changed from secondary to accent gold */
 }
 
 @media (max-width: 768px) {
@@ -102,6 +103,17 @@
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Mobile Nav Highlights */
+    .nav-links a:hover::after {
+        width: 0 !important;
+    }
+
+    .nav-links a.active::after {
+        width: 30px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 }

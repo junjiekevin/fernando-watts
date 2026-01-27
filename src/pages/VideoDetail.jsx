@@ -37,7 +37,7 @@ const VideoDetail = () => {
                         </div>
                     </div>
 
-                    <div className="theater-metadata container mt-xl">
+                    <div className="theater-metadata container mt-video-detail">
                         <h1 className="theater-title">
                             {recording.title}
                             <span className="theater-title-date"> — {recording.date} —</span>
