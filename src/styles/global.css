@@ -1,0 +1,523 @@
+:root {
+    /* Regal Navy & Gold Palette */
+    --color-primary: #001233;
+    /* Deep Midnight Navy */
+    --color-secondary: #000000;
+    /* Rich Black */
+    --color-accent: #D4AF37;
+    /* Polished Gold */
+    --color-bg-light: #FDFCFB;
+    /* Champagne */
+    --color-text: #FDFCFB;
+    /* Champagne for high contrast */
+    --color-text-muted: #A0A0A0;
+    --color-white: #FFFFFF;
+
+    /* Typography */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Outfit', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+    /* Ensure headings are readable on dark bg */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+}
+
+.btn-outline {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+}
+
+/* Page Structure */
+.pt-navbar {
+    padding-top: 100px;
+}
+
+.page-fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 10vw, 6rem);
+    color: var(--color-text);
+    /* Switched from black to Champagne */
+    line-height: 0.9;
+}
+
+.hero-cta {
+    margin-top: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+/* Section Shared */
+.section-title {
+    font-size: 3rem;
+    color: var(--color-accent);
+    /* Titles now use the Regal Gold */
+    position: relative;
+    display: inline-block;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Gallery & Media Improvements */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: var(--transition-smooth);
+    background: var(--color-secondary);
+    height: 400px;
+    /* Fixed height for consistency */
+}
+
+.gallery-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures images fill space without distortion */
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.gallery-card:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+/* Recordings Grid & Video Players */
+.recordings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.recording-card {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: var(--transition-smooth);
+}
+
+.recording-thumbnail-container {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: var(--color-secondary);
+}
+
+.recording-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.recording-play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-accent);
+    opacity: 0.8;
+    transition: var(--transition-smooth);
+}
+
+.recording-card:hover .recording-thumbnail {
+    transform: scale(1.05);
+}
+
+.recording-card:hover .recording-play-overlay {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+}
+
+.recording-grid-date {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.recording-grid-title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+    color: var(--color-text);
+}
+
+.recording-grid-composer {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.recording-grid-collaborator {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 0.3rem;
+}
+
+/* Theater Mode Styles */
+.theater-header {
+    padding: var(--spacing-md) var(--spacing-md);
+}
+
+.theater-section {
+    padding-bottom: var(--spacing-xl);
+}
+
+.video-player-wrapper {
+    background: #000;
+    padding: var(--spacing-lg) 0;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.theater-container .video-container {
+    max-width: 1200px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* Theater Mode Styles */
+.theater-section {
+    padding-bottom: var(--spacing-xl);
+}
+
+.video-player-wrapper {
+    background: #000;
+    padding: var(--spacing-lg) 0;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.theater-footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    padding-top: var(--spacing-md);
+    max-width: 400px;
+    margin: var(--spacing-lg) auto 0;
+}
+
+.back-link-refined {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: var(--transition-smooth);
+    opacity: 0.8;
+}
+
+.back-link-refined:hover {
+    opacity: 1;
+    transform: translateX(-5px);
+}
+
+.theater-container .video-container {
+    max-width: 1200px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.theater-metadata {
+    text-align: center;
+    max-width: 900px !important;
+}
+
+.theater-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    color: var(--color-text);
+}
+
+.theater-title-date {
+    display: block;
+    /* Tasteful block display for better rhythm */
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-top: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+}
+
+.theater-composer {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.theater-collaborator {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .recordings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .theater-title {
+        font-size: 2rem;
+    }
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.profile-photo {
+    width: 100%;
+    max-height: 600px;
+    /* Constrain huge images */
+    object-fit: cover;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Standard Components */
+
+/* Home Highlights */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.card-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #eee;
+    margin-bottom: 1rem;
+}
+
+/* Bio Layout */
+.bio-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background-color: #eee;
+}
+
+/* Schedule */
+.schedule-item {
+    display: grid;
+    grid-template-columns: 150px 1fr auto;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.schedule-date {
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+/* Contact */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    background: var(--color-white);
+    font-family: var(--font-sans);
+    margin-bottom: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+
+    .bio-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-card {
+        height: 300px;
+    }
+}

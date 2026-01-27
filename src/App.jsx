@@ -1,0 +1,36 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Bio from './pages/Bio';
+import Schedule from './pages/Schedule';
+import News from './pages/News';
+import Gallery from './pages/Gallery';
+import Recordings from './pages/Recordings';
+import Contact from './pages/Contact';
+import VideoDetail from './pages/VideoDetail';
+
+function App() {
+  return (
+    <Router>
+      <div className="app-container">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/bio" element={<Bio />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/recordings" element={<Recordings />} />
+            <Route path="/recordings/:id" element={<VideoDetail />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;
