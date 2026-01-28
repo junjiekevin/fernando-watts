@@ -37,7 +37,7 @@ const Gallery = () => {
                     <h1 className="section-title text-center reveal">Gallery</h1>
                     <div className="gallery-grid mt-lg">
                         {images.map((img, index) => (
-                            <div key={index} className="gallery-card">
+                            <div key={index} className="gallery-card reveal">
                                 <img src={img.src} alt={img.alt} className="gallery-image" loading="lazy" />
                                 <div className="gallery-overlay">
                                     <span className="overlay-text">{img.alt}</span>

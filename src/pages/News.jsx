@@ -13,7 +13,7 @@ const News = () => {
                 <div className="container">
                     <h1 className="section-title text-center reveal">News & Reviews</h1>
                     <div className="news-grid mt-lg">
-                        <div className="news-card">
+                        <div className="news-card reveal">
                             <div className="news-date">January 20, 2026</div>
                             <h3>"A Voice of Generational Power"</h3>
                             <p className="news-source">Opera News</p>

@@ -19,7 +19,7 @@ const Recordings = () => {
                     <h1 className="section-title text-center reveal">Recordings</h1>
                     <div className="recordings-grid mt-lg">
                         {recordings.map((rec) => (
-                            <Link to={`/recordings/${rec.id}`} key={rec.id} className="recording-card">
+                            <Link to={`/recordings/${rec.id}`} key={rec.id} className="recording-card reveal">
                                 <div className="recording-thumbnail-container">
                                     <img src={rec.thumbnail} alt={rec.title} className="recording-thumbnail" />
                                     <div className="recording-play-overlay">

@@ -29,12 +29,12 @@ const Home = () => {
                     <div className="container">
                         <h2 className="section-title text-center">Recent Highlights</h2>
                         <div className="highlights-grid mt-lg">
-                            <div className="highlight-card">
+                            <div className="highlight-card reveal">
                                 <div className="card-placeholder"></div>
                                 <h3>Debut at La Scala</h3>
                                 <p>Performing the role of Sarastro in Mozart's Die Zauberflöte.</p>
                             </div>
-                            <div className="highlight-card">
+                            <div className="highlight-card reveal">
                                 <div className="card-placeholder"></div>
                                 <h3>Berlin Philharmonic</h3>
                                 <p>Soloist in Verdi's Messa da Requiem under the baton of...</p>

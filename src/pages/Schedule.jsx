@@ -13,7 +13,7 @@ const Schedule = () => {
                 <div className="container">
                     <h1 className="section-title text-center reveal">Schedule</h1>
                     <div className="schedule-list mt-lg">
-                        <div className="schedule-item">
+                        <div className="schedule-item reveal">
                             <div className="schedule-date">OCT 15, 2026</div>
                             <div className="schedule-info">
                                 <h3>The Metropolitan Opera</h3>
