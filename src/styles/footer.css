@@ -22,7 +22,8 @@
     margin-bottom: 0.5rem;
 }
 
-.footer-logo .accent {
+.footer-logo .accent,
+.gold-accent {
     color: var(--color-accent);
 }
 

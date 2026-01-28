@@ -974,3 +974,8 @@ a {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Fix for Contact Page Background Resolution */
+.contact-bg-wrapper {
+    background-attachment: scroll !important;
+}
