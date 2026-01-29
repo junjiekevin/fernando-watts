@@ -5,6 +5,8 @@
     border-top: 1px solid rgba(212, 175, 55, 0.2);
     /* Gold border */
     margin-top: var(--spacing-xl);
+    position: relative;
+    z-index: 10;
 }
 
 .footer-content {

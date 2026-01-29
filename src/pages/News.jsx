@@ -1,25 +1,46 @@
-import newsBanner from '../assets/images/banner_news.jpg';
 import SEO from '../components/SEO';
+
+const NEWS_ARTICLES = [
+    {
+        id: 1,
+        title: '"Classical singers off to London"',
+        date: 'April 11, 2025',
+        source: 'Nation News',
+        excerpt: 'Three talented Barbadian classical singers are about to get a boost in their quest for the world’s big opera stages through the efforts of British opera...',
+        url: 'https://nationnews.com/2025/04/11/classical-singers-off-to-london/#',
+        thumbnail: '/images/nation-news.png'
+    }
+];
 
 const News = () => {
     return (
-        <div className="page-fade-in pt-navbar">
+        <div className="news-page page-fade-in pt-navbar">
             <SEO
                 title="News & Reviews"
-                description="The latest news, press releases, and critical reviews for Fernando Watts, professional classical bass."
+                description="Stay updated with the latest news, press reviews, and performance announcements featuring Fernando Watts."
             />
-            <div className="page-banner" style={{ backgroundImage: `url(${newsBanner})` }}></div>
+
+            {/* Page Banner */}
+            <div className="page-banner news-banner" style={{ backgroundImage: `url(/images/banner_news.jpeg)` }}></div>
+
             <section className="section">
                 <div className="container">
                     <h1 className="section-title text-center reveal">News & Reviews</h1>
                     <div className="news-grid mt-lg">
-                        <div className="news-card reveal">
-                            <div className="news-date">January 20, 2026</div>
-                            <h3>"A Voice of Generational Power"</h3>
-                            <p className="news-source">Opera News</p>
-                            <p className="news-excerpt">Fernando Watts' debut in the role of King Philip II was nothing short of extraordinary...</p>
-                            <a href="#" className="read-more">Read Full Review</a>
-                        </div>
+                        {NEWS_ARTICLES.map((article) => (
+                            <div key={article.id} className="news-card reveal">
+                                <div className="news-image-wrapper">
+                                    <img src={article.thumbnail} alt={article.title} className="news-thumbnail" />
+                                </div>
+                                <div className="news-card-content">
+                                    <div className="news-date">{article.date}</div>
+                                    <h3>{article.title}</h3>
+                                    <p className="news-source">{article.source}</p>
+                                    <p className="news-excerpt">{article.excerpt}</p>
+                                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="read-more">Read more</a>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
