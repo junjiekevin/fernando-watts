@@ -1516,6 +1516,22 @@ a {
     }
 }
 
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-fade-in {
+    animation: pageFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
 /* Utility Animations */
 @keyframes spin {
     from {

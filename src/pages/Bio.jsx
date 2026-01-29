@@ -3,7 +3,7 @@ import SEO from '../components/SEO';
 
 const Bio = () => {
     return (
-        <div className="bio-backdrop-page">
+        <div className="bio-backdrop-page page-fade-in">
             <SEO
                 title="Biography"
                 description="The journey of Fernando Watts, from the shores of Barbados to the operatic stages of Europe."
@@ -18,7 +18,7 @@ const Bio = () => {
             </div>
 
             {/* Scrolling Content */}
-            <div className="bio-scroll-wrapper">
+            <div className="bio-scroll-wrapper page-fade-in">
                 <div className="container">
 
                     {/* Hero Header */}
