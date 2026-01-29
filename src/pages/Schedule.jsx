@@ -1,6 +1,37 @@
+import React from 'react';
 import SEO from '../components/SEO';
 
 const Schedule = () => {
+    const performances = [
+        {
+            id: 1,
+            date: "OCT 15, 2026",
+            company: "The Metropolitan Opera",
+            production: "Die Zauberflöte",
+            role: "Sarastro",
+            location: "New York, NY",
+            link: "#"
+        },
+        {
+            id: 2,
+            date: "NOV 02, 2026",
+            company: "The Metropolitan Opera",
+            production: "Die Zauberflöte",
+            role: "Sarastro",
+            location: "New York, NY",
+            link: "#"
+        },
+        {
+            id: 3,
+            date: "DEC 12, 2026",
+            company: "Barbados National Chorus",
+            production: "Christmas Gala",
+            role: "Guest Soloist",
+            location: "Bridgetown, Barbados",
+            link: "#"
+        }
+    ];
+
     return (
         <div className="page-fade-in pt-navbar">
             <SEO
@@ -8,22 +39,26 @@ const Schedule = () => {
                 description="View Fernando Watts' upcoming performance schedule, opera debuts, and recital dates."
             />
             <div className="page-banner" style={{ backgroundImage: `url(/images/banner_schedule.jpeg)` }}></div>
+
             <section className="section">
                 <div className="container">
                     <h1 className="section-title text-center reveal">Schedule</h1>
-                    <div className="schedule-list mt-lg">
-                        <div className="schedule-item reveal">
-                            <div className="schedule-date">OCT 15, 2026</div>
-                            <div className="schedule-info">
-                                <h3>The Metropolitan Opera</h3>
-                                <p>Role: Sarastro | Die Zauberflöte</p>
-                                <p className="venue">New York, NY</p>
+                    <div className="schedule-grid">
+                        {performances.map((perf) => (
+                            <div key={perf.id} className="performance-card reveal">
+                                <div className="card-inner">
+                                    <div className="card-date">{perf.date}</div>
+                                    <div className="card-production">
+                                        <h3>{perf.production}</h3>
+                                        <p className="card-role">{perf.company} | {perf.role}</p>
+                                    </div>
+                                    <div className="card-venue">{perf.location}</div>
+                                </div>
+                                <div className="card-action">
+                                    <a href={perf.link} className="btn btn-outline btn-sm">Tickets</a>
+                                </div>
                             </div>
-                            <div className="schedule-action">
-                                <a href="#" className="btn btn-outline btn-sm">Tickets</a>
-                            </div>
-                        </div>
-                        {/* Repeat for more items */}
+                        ))}
                     </div>
                 </div>
             </section>

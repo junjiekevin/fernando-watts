@@ -3,7 +3,7 @@ import SEO from '../components/SEO';
 
 const Bio = () => {
     return (
-        <div className="bio-backdrop-page page-fade-in">
+        <div className="bio-backdrop-page">
             <SEO
                 title="Biography"
                 description="The journey of Fernando Watts, from the shores of Barbados to the operatic stages of Europe."
@@ -18,18 +18,18 @@ const Bio = () => {
             </div>
 
             {/* Scrolling Content */}
-            <div className="bio-scroll-wrapper page-fade-in">
+            <div className="bio-scroll-wrapper">
                 <div className="container">
 
                     {/* Hero Header */}
-                    <div className="bio-header-section text-center">
+                    <div className="bio-header-section text-center reveal">
                         <h1 className="bio-name">Fernando Watts</h1>
                     </div>
 
                     <div className="bio-staggered-grid">
 
                         {/* 1. Intro - Full Width Span */}
-                        <div className="bio-grid-item full-width">
+                        <div className="bio-grid-item full-width reveal">
                             <div className="bio-module intro">
                                 <p className="lead-text">
                                     From the vibrant coastlines of Bridgetown, Barbados, to the grand opera houses of Europe, Fernando Watts’ journey is one of resilience, passion, and artistic excellence.
@@ -38,14 +38,14 @@ const Bio = () => {
                         </div>
 
                         {/* 2. Image: Roots (Left) */}
-                        <div className="bio-grid-item">
+                        <div className="bio-grid-item reveal">
                             <div className="bio-image-module">
                                 <img src="/images/profile-2.JPG" alt="Fernando Watts Roots" className="bio-inline-image" />
                             </div>
                         </div>
 
                         {/* 3. Text: Roots (Right - Staggered) */}
-                        <div className="bio-grid-item staggered-down">
+                        <div className="bio-grid-item staggered-down reveal">
                             <div className="bio-module">
                                 <span className="bio-section-label">Roots in Barbados</span>
                                 <h2 className="bio-section-title">Beyond the Shore</h2>
@@ -61,7 +61,7 @@ const Bio = () => {
                         </div>
 
                         {/* 4. Text: Mastery (Left - Staggered) */}
-                        <div className="bio-grid-item staggered-up">
+                        <div className="bio-grid-item staggered-up reveal">
                             <div className="bio-module">
                                 <span className="bio-section-label">Artistic Mastery</span>
                                 <h2 className="bio-section-title">A Global Stage</h2>
@@ -77,14 +77,14 @@ const Bio = () => {
                         </div>
 
                         {/* 5. Image: Stage (Right) */}
-                        <div className="bio-grid-item">
+                        <div className="bio-grid-item reveal">
                             <div className="bio-image-module">
                                 <img src="/images/profile-3.JPG" alt="Fernando Watts Artistry" className="bio-inline-image" />
                             </div>
                         </div>
 
                         {/* 6. Vision - Full Width Span */}
-                        <div className="bio-grid-item full-width">
+                        <div className="bio-grid-item full-width reveal">
                             <div className="bio-module vision-module text-center">
                                 <div className="quote-wrap mb-md">
                                     <span className="ornament">“</span>
